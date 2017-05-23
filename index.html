@@ -4,34 +4,151 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-	<div class="row header clearfix" style="margin-bottom:30px;">
-            <div class="col-md-12">
-                <h3><i class="fa-motorcycle" style="font-size:48px;"></i>Routing Example</h3>
-            </div>
-        </div>
+	
 	<div class="container-fluid">
 		<div class="row">
-			<div id="googleMap1" style="height:400px;" class="col-md-7"></div>
-			<div id="options" class="col-md-4">
-				<label class="radio-inline">
-				  <input type="radio" name="radCalc" value="auto">Auto
-				</label>
-				<label class="radio-inline">
-				  <input type="radio" name="radCalc" value="manual">Manual
-				</label>
-				<label class="checkbox-inline"><input type="checkbox" >Round Trip?</label>
-				<div class="row" id="allAddresses">
-				</div>
+			<div class="col-sm-12 form-group">
+				<h3><i class="fa fa-motorcycle" style="font-size:36px;"></i>  Routing Example</h3>
 			</div>
 		</div>
-	</div>
-	<div id="floating-panel" class="col-md-3">
-		  Address:<input class="form-control" id="address" type="textbox" value="Toronto, ON">
-		  <input class="btn-primary" id="submit" type="button" value="Add">
-		  <input class="btn-success" id="draw" type="button" value="Draw">
+		<div class="row">
+
+            <div class="col-md-3" class="bg-info"><h3>Step 1</h3>
+                <div id="location">
+                    <h4>
+                        Select Starting Point
+                    </h4>
+                    <br><br>
+                    <div class="divDDL">
+                        <select name="startingPoint" id="startingPoint">
+                        </select>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="divDDL">
+                        <i class="icon-info" style="font-size:20px;"></i> <h5>Destinations close to this point:</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6"><h3>Step 2</h3>
+                <div id="level" class="col-md-12">
+                    <label class="radio-inline">Show:</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radCalc" value="all" checked>All
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radCalc" value="needed">Critical
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radCalc" value="custom">Custom Location
+                    </label>
+
+                    <br><br>
+
+                    <div id="lvlsChoose" class="col-md-6" style="border: solid 1px #ccc; border-radius: 15px;"><h4>Choose Points to Visit:</h4><br>
+                        <div id="levels">
+                        </div>
+                    </div>
+                    <div id="customAddress" class="divVisited col-md-6">
+                        Address:<input class="form-control" id="address" type="textbox" value="Toronto, ON">
+                        <input class="btn btn-primary" id="submit" type="button" value="Add Location" style="float:right;">
+                    </div>
+                    <div id="lvlsChosen" class="col-md-6" style="border: solid 1px #ccc; border-radius: 15px;"><h4>Points Selected:</h4><br>
+                        <div id="right-panel">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3"><h3>Step 3</h3>
+                <div id="calculate">
+                    <h4>
+                        Choose Ending Point & Search
+                    </h4>
+                    <br>
+                    <div class="divDDL">
+                        <select name="endingPoint" id="endingPoint">
+                        </select>
+                        <br>
+                        <input class=" btn btn-success" id="draw" type="button" value="Get Route" style="float:right;">
+                    </div>
+                    <br><br>
+                    <hr>
+                    <div class="divDDL">
+                        <i class="icon-info" style="font-size:20px;"></i> <h5>Destinations close to this point:</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">Route Map
+                <div id="googleMap1">
+                </div>
+            </div>
+
+            <div class="col-md-3">Route Details
+                <div id="details">
+                    &nbsp;
+                </div>
+            </div>
+
+            <!--<div class="col-md-4">Configure Settings
+                <div id="settings">
+
+                </div>
+
+            </div>-->
+
+            <div class="col-md-4" class="bg-info">Configure Truck
+                <div id="truck">
+                    <div id="water">
+                        <!--<p>
+                            Amount of water left on the truck
+                        </p>
+                        <p id="truckLevel" class="label-warning">
+
+                        </p>-->
+                    </div>
+                    <div class="divDDL">
+                        <div> <!-- class="divVisited">-->
+                            <p>Select Last Point Visited</p>
+                            <select id="levelVisited">
+                            </select>
+                            <button class="btn-flat default" id="closestPump">Get Closest Start/Ending</button>
+                            <div id="distance">
+                            </div>
+                        </div>
+                        <!--
+                        <div> <!-- class="divVisited">-->
+                            <!--<p>Find Levels Close to Pump</p>
+                            <select id="station">
+                            </select>
+                            <button class="btn-flat default" id="closestPump">Get Closest Levels</button>
+                            <div id="distance">
+                            </div>
+                        </div>
+                    -->
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="col-md-4">Configure Water Sources
+                <div id="sources">
+                    <div class="actions" style="text-align:center;">
+                        <button type="button" class="btn-flat primary" id="btnCreateStation"  data-toggle="modal" data-target="#createStation">Create Station</button>
+                        <!--  <button type="button" class="btn-flat secondary" id="btnUpdateDelivery">Update Delivery</button>
+                          <button type="button" class="btn-flat secondary" id="btnUpdatePropertyManager">Update Property Manager</button>--
+                    </div>
+                    <p>&nbsp;</p>
+                </div>
+            </div> -->
+
+        </div>
 	</div>
 	<div id="directions-panel"></div>
 	<div id="right-panel"></div>

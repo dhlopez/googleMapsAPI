@@ -1,4 +1,197 @@
-#googleMap1
+#truck, #summary, #details, #coloured, #suppliers, #level, #Stations, #calculate, #settings, #sources, #etc, #details, #location
 {
-	margin: 0px 0px 0px 10px;
+	background-color:#f5f5f5;
+	overflow-y:auto;
+	height:300px
+}
+b
+{
+	margin: 5px 0px 0px 10px;
+}
+#right-panel
+{
+	/*height:300px;
+	overflow-y:auto;*/
+	/*background-color: #87e0fd;/*53cbf1 87e0fd*/
+}
+
+#truckLevel
+{
+	font-size: 16px;
+	text-align: center;
+}
+
+#water
+{
+	font-size: 14px;
+	background-color:#f0ad4e;
+}
+#distance
+{
+	font-size: 14px;
+	margin: 5px 0px;
+}
+#divVisited
+{
+	width:90%;
+	margin: auto;
+}
+#customAddress
+{
+	width:45%;
+	display:inline-block;
+}
+#googleMap1, #details, #googleMap2
+{
+	height:400px;
+}
+
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 17px;
+	margin-top: 5px;
+	margin-bottom:0px;
+	margin-left: 3px;
+}
+
+.switch input {display:none;}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 12px;
+	width: 12px;
+	left: 4px;
+	bottom: 3px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: #2196F3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(10px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+ #googleMapUser, #googleMapUserStation
+{
+	/*width:500px;*/
+	margin:5px auto;
+	height:350px;
+}
+#addressPanel
+{
+	height:60px;
+	overflow-y:auto;
+	background-color: #ccc;
+	font-size: 14pt;
+}
+user-map
+{
+	width:90%;
+}
+#mapDetails
+{
+	height:150px;
+	width:100%;
+}
+wrapperAddress {
+
+	display:inline-block;
+	background-color: #fff;
+}
+
+.txtAddress, .search {
+	border:1px solid #cccccc;
+	width:90%;
+}
+#set {
+	border:0px;
+	height:40px;
+	width:40px;
+	background-color:transparent;
+	border:0px;
+}
+#address
+{
+	width:90%;
+}
+#buttons
+{
+	text-align: right;
+	margin: 0% 10%;
+}
+#modalBackground
+{
+	background-color:#f7f7f7;
+}
+#startingPoint, #endingPoint, #levelVisited, #station
+{
+	width:100%;
+}
+.divDDL
+{
+	width:90%;
+	margin:0 auto;
+}
+#draw, #submit
+{
+	margin: 5px 0;
+}
+#closestLvls
+{
+	width:5px;
+	height:5px;
+}
+.radio-inline
+{
+	font-size: 12pt;
+}
+#submit
+{
+	margin: 5px 10% 5px 0px;
+}
+.textBox
+{
+	margin: 15px 0;
+}
+.labelM
+{
+	margin: 20px 0;
+}
+#btnConfirm, #btnCheck
+{
+	margin: 0px 0px 5px 0px;
 }
