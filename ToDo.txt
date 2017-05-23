@@ -1,0 +1,3 @@
+https://developers.google.com/maps/documentation/javascript/directions
+http://stackoverflow.com/questions/31588308/google-direction-api-directionsservice-route-does-not-return-result
+http://stackoverflow.com/questions/20796689/google-map-api-does-not-provide-optimized-route-even-though-optimizewaypoints-is

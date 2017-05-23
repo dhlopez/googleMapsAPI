@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div class="row header clearfix" style="margin-bottom:30px;">
+            <div class="col-md-12">
+                <h3><i class="fa-motorcycle" style="font-size:48px;"></i>Routing Example</h3>
+            </div>
+        </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div id="googleMap1" style="height:400px;" class="col-md-7"></div>
+			<div id="options" class="col-md-4">
+				<label class="radio-inline">
+				  <input type="radio" name="radCalc" value="auto">Auto
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="radCalc" value="manual">Manual
+				</label>
+				<label class="checkbox-inline"><input type="checkbox" >Round Trip?</label>
+				<div class="row" id="allAddresses">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="floating-panel" class="col-md-3">
+		  Address:<input class="form-control" id="address" type="textbox" value="Toronto, ON">
+		  <input class="btn-primary" id="submit" type="button" value="Add">
+		  <input class="btn-success" id="draw" type="button" value="Draw">
+	</div>
+	<div id="directions-panel"></div>
+	<div id="right-panel"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8M6Vp2tyfgyF-bHpdExWkIsP-2p5tB5s&callback=myMap"></script>
+</body>
+</html>
